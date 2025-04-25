@@ -21,7 +21,7 @@
 	};
 
 	chosen {
-		stdout-path = "serial4:1500000n8";
+		stdout-path = "serial0:115200n8";
 	};
 
 	backlight: backlight {
@@ -304,6 +304,24 @@
 	pinctrl-0 = <&hdmi_cec>;
 	status = "okay";
 };
+
+// &gpu {
+// 	mali-supply = <&vdd_gpu>;
+// 	status = "okay";
+// };
+
+// &hdmi {
+// 	avdd-0v9-supply = <&vcca0v9_hdmi>;
+// 	avdd-1v8-supply = <&vcca1v8_hdmi>;
+// 	ddc-i2c-bus = <&i2c3>;
+// 	pinctrl-names = "default";
+// 	pinctrl-0 = <&hdmi_cec>;
+// 	status = "okay";
+// };
+
+// &hdmi_sound {
+// 	status = "okay";
+// };
 
 &i2c0 {
 	clock-frequency = <400000>;
@@ -878,7 +896,7 @@
 
 &uart0 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&uart0_xfer &uart0_cts>;
+	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
 	status = "okay";
 };
 
